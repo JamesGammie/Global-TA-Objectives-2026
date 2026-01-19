@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global TA Objectives 2026 | Wood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-black: #000000;
+            --color-gray-dark: #1E293B;
+            --color-gray-med: #64748B;
+            --color-gray-light: #CBD5E1;
+            --color-gray-50: #F8FAFC;
+            --color-gray-100: #F1F5F9;
+            --color-gray-200: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #FFFFFF;
+            color: var(--color-gray-dark);
+            line-height: 1.6;
+        }
+
+        .page-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            background: #000000;
+            padding: 2.5rem 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            display: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-section {
+            position: absolute;
+            bottom: 2rem;
+            right: 3rem;
+            text-align: right;
+        }
+
+        .wood-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+            margin-bottom: 0;
+        }
+
+        .logo-tagline {
+            display: none;
+        }
+
+        .header-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .header-tagline {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+            margin-top: 1.5rem;
+            font-style: normal;
+            letter-spacing: 0.05em;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+        }
+
+        .meta-value {
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-left: 0.25rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.75rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .tab-btn:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: white;
+            border-color: white;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .tab-btn.plan-tab.active {
+            color: #000000;
+        }
+
+        .tab-btn.attract-tab.active {
+            color: #000000;
+        }
+
+        .tab-btn.engage-tab.active {
+            color: #000000;
+        }
+
+        .tab-btn.develop-tab.active {
+            color: #000000;
+        }
+
+        .content {
+            padding: 3rem;
+        }
+
+        .priority-section {
+            margin-bottom: 3rem;
+            page-break-inside: avoid;
+        }
+
+        .priority-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 0;
+            border-bottom: none;
+            background: var(--color-gray-50);
+            padding: 1.5rem 2rem;
+        }
+
+        .priority-number {
+            display: none;
+        }
+
+        .priority-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .plan-section .priority-header {
+            background: #000000;
+        }
+        .plan-section .priority-title {
+            color: white;
+        }
+
+        .attract-section .priority-header {
+            background: #000000;
+        }
+        .attract-section .priority-title {
+            color: white;
+        }
+
+        .engage-section .priority-header {
+            background: #000000;
+        }
+        .engage-section .priority-title {
+            color: white;
+        }
+
+        .develop-section .priority-header {
+            background: #000000;
+        }
+        .develop-section .priority-title {
+            color: white;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .objective-card {
+            background: white;
+            border: 2px solid var(--color-gray-200);
+            border-radius: 0;
+            padding: 2rem;
+            border-left: 6px solid;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .objective-card:hover {
+            border-color: var(--color-gray-200);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .plan-section .objective-card {
+            border-left-color: #000000;
+        }
+
+        .attract-section .objective-card {
+            border-left-color: #000000;
+        }
+
+        .engage-section .objective-card {
+            border-left-color: #000000;
+        }
+
+        .develop-section .objective-card {
+            border-left-color: #000000;
+        }
+
+        .objective-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1rem;
+        }
+
+        .objective-content {
+            font-size: 1rem;
+            color: var(--color-gray-dark);
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+        }
+
+        .measures-section {
+            background: var(--color-gray-50);
+            border-radius: 0;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-gray-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .measures-list,
+        .targets-list {
+            list-style: none;
+            font-size: 0.95rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+        }
+
+        .measures-list li,
+        .targets-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .measures-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .targets-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: currentColor;
+            font-weight: 700;
+        }
+
+        .targets-section {
+            background: var(--color-gray-50);
+            border-radius: 0;
+            padding: 1.25rem;
+        }
+
+        .footer {
+            background: var(--color-gray-100);
+            padding: 2rem 3rem;
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: var(--color-gray-dark);
+            border-top: 1px solid var(--color-gray-200);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page-container {
+                box-shadow: none;
+            }
+            .objective-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="wood-logo">wood.</div>
+            </div>
+            <div class="header-content">
+                <h1 class="header-title">Global TA Objectives</h1>
+                <div class="header-meta">
+                    <span>Period: <span class="meta-value">2026</span></span>
+                    <span>Strategic Priorities: <span class="meta-value">4</span></span>
+                    <p class="header-tagline">Remarkable People Designing the Future</p>
+                </div>
+                <div class="tab-buttons">
+                    <button class="tab-btn plan-tab active" onclick="showSection('plan', event)">Plan</button>
+                    <button class="tab-btn attract-tab" onclick="showSection('attract', event)">Attract & Acquire</button>
+                    <button class="tab-btn engage-tab" onclick="showSection('engage', event)">Engage & Retain</button>
+                    <button class="tab-btn develop-tab" onclick="showSection('develop', event)">Develop & Deploy</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            
+            <!-- PLAN Section -->
+            <div class="priority-section plan-section">
+                <div class="priority-header">
+                    <div class="priority-title">Plan</div>
+                </div>
+                <div class="objectives-grid">
+                    
+                    <!-- Talent Focal Points -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Talent Focal Points</h3>
+                        <div class="objective-content">
+                            TFP's to attend regional LRM meetings, so that major bids (>£10M) have TA input/awareness during IOD phases
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>TFP's nominated - Q1</li>
+                                <li>TFP's attend regional LRM's - Q2</li>
+                                <li>100% bid coverage - Q2</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Reporting -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Reporting</h3>
+                        <div class="objective-content">
+                            Regular monthly reporting on regional and vertical markets inclusive of trends, DE&I, movement, risks and opportunities
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>Input from all TA teams distilled and included in monthly reports - Q1</li>
+                                <li>Quarterly LinkedIn Talent Report agreed & produced - Q2</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Pipelining -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Strategic Pipelining & Future Skills</h3>
+                        <div class="objective-content">
+                            Talent pools reviewed in each location and priorities agreed for 2026 (considering TOPPs, DE&I, Pinchpoints, Nationalisation, offboarding, future skills)
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>Pipelining split agreed with hubs for each location - Q2</li>
+                                <li>25% increase in top 5 talent pools per office - Q4</li>
+                                <li>Future skills assessment completed per BU - Q4</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ATTRACT & ACQUIRE Section -->
+            <div class="priority-section attract-section">
+                <div class="priority-header">
+                    <div class="priority-title">Attract & Acquire</div>
+                </div>
+                <div class="objectives-grid">
+                    
+                    <!-- TA Hubs -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">TA Hubs (India/Bogota)</h3>
+                        <div class="objective-content">
+                            TA Hubs fully embed in regional teams, maximising / building on current scope to suit region (e.g bid utilisation, pipelining etc).
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>LinkedIn training for TA hubs - Q1</li>
+                                <li>Review & agree RACI - Q1</li>
+                                <li>KPI's agreed - Q1</li>
+                                <li>Reporting Structure agreed - Q1</li>
+                                <li>100% utilisation for core activities by end of Q2</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right People, Right Place, Right Time -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Right People, Right Place, Right Time</h3>
+                        <div class="objective-content">
+                            Time to Offer, Trade Mobilisation, Direct Hire %; Vacancy Housekeeping
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets (Reviewed Quarterly)</div>
+                            <ul class="targets-list">
+                                <li>Time to Offer Accepted (&lt;35 days)</li>
+                                <li>Trade on-time mobilisation (over 95%)</li>
+                                <li>Direct Hire % (Over 97%)</li>
+                                <li>Vacancies over 90 Days (&lt;3%)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Employer Branding -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Employer Branding</h3>
+                        <div class="objective-content">
+                            Harmonise P&T attraction, sharing and building on current best practice globally
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>Brand Ambassador Program launch - End of Q2 (&gt;3 per region)</li>
+                                <li>20% increase in career site traffic by end of 2026</li>
+                                <li>20% increase in LinkedIn engagement</li>
+                                <li>Social Media Calendar implemented - end of Q3</li>
+                                <li>&gt;5% improvement in gender diversity vs. 2024/5 baseline</li>
+                                <li>&gt;10% increase in EC applications vs 2024/5 average</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- HPL Interview Templates -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">HPL Interview Templates (Global)</h3>
+                        <div class="objective-content">
+                            Complete templates, drive awareness & adoption
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>Finalised templates - Q1 (Leading Org / Leader Others / Leading Self)</li>
+                                <li>Add to resourcing connect - Q2</li>
+                                <li>Identify medium to communicate new templates - Q3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Early Careers -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Early Careers</h3>
+                        <div class="objective-content">
+                            Harmonise Early Careers attraction, sharing and building on current best practice globally
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>100% delivery of approved vacancies</li>
+                                <li>&gt;5% improvement in gender diversity vs. 2024/5 baseline</li>
+                                <li>EC Attraction Toolkit hosted on Resourcing Connect - Q4</li>
+                                <li>TA manage / collate EC forecast - Q1</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ENGAGE & RETAIN Section -->
+            <div class="priority-section engage-section">
+                <div class="priority-header">
+                    <div class="priority-title">Engage & Retain</div>
+                </div>
+                <div class="objectives-grid">
+                    
+                    <!-- Onboarding & Offboarding -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Onboarding & Offboarding</h3>
+                        <div class="objective-content">
+                            Use starters and leavers data/feedback to improve recruitment performance. New leader journey and offboarding process agreed
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>Hub run OP leavers list per office - Quarterly</li>
+                                <li>Local TA action, partner with DM's to build Talent Pipelines - Quarterly</li>
+                                <li>Touchpoint for all new hire with TA team, seeking referrals</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- DEVELOP & DEPLOY Section -->
+            <div class="priority-section develop-section">
+                <div class="priority-header">
+                    <div class="priority-title">Develop & Deploy</div>
+                </div>
+                <div class="objectives-grid">
+                    
+                    <!-- Talent Priorities - Development Opportunities -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">Talent Priorities - Development Opportunities</h3>
+                        <div class="objective-content">
+                            % of team with development plans; % with Talent Priority objective each quarter
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>At least 1 development goal per recruiter</li>
+                                <li>100% of Leads have at least one Talent Priority objective they are involved with in 2026</li>
+                                <li>Exec Search mentor assignments - quarterly</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- System Optimisation -->
+                    <div class="objective-card">
+                        <h3 class="objective-title">System Optimisation</h3>
+                        <div class="objective-content">
+                            Training for Project Redwood implemented
+                        </div>
+                        <div class="targets-section">
+                            <div class="section-label">Targets</div>
+                            <ul class="targets-list">
+                                <li>Training methodology agreed end of Q1</li>
+                                <li>Regional testers nominated Q1</li>
+                                <li>100% Recruiters trained Q2</li>
+                                <li>Agreed roll out for HM's awareness - Q3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Talent Acquisition I Operational Objectives I 2026
+        </div>
+    </div>
+
+    <script>
+        function showSection(section, event) {
+            // Update button states - remove active from all, add to clicked
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Hide all sections
+            document.querySelector('.plan-section').style.display = 'none';
+            document.querySelector('.attract-section').style.display = 'none';
+            document.querySelector('.engage-section').style.display = 'none';
+            document.querySelector('.develop-section').style.display = 'none';
+            
+            // Show only the selected section
+            if (section === 'plan') {
+                document.querySelector('.plan-section').style.display = 'block';
+            } else if (section === 'attract') {
+                document.querySelector('.attract-section').style.display = 'block';
+            } else if (section === 'engage') {
+                document.querySelector('.engage-section').style.display = 'block';
+            } else if (section === 'develop') {
+                document.querySelector('.develop-section').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
